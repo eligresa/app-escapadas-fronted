@@ -3,7 +3,8 @@ import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import Rutas from './pages/Rutas'
-import Creditos from './pages/Creditos'
+import ListaRutas from './pages/ListaRutas'
+import Ruta from './pages/Ruta'
 import { FaGithub } from "react-icons/fa";
 
 function App() {
@@ -11,29 +12,32 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>Rutas de tu Tierra</h1>
+      <header>       
         <nav>
           <ul className='nav superior'>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/rutas">Rutas</Link></li>
-            <li><Link to="/creditos">Créditos</Link></li>
+            <li><Link to="/lista-rutas">Lista de Rutas</Link></li>
+            
+
           </ul>
         </nav>
-        
-        
-        
-        </header>
+
+
+
+      </header>
       <main>
         <Routes>
-          <Route path='/' element={<Home/>}>Home</Route>
-          <Route path='/rutas' element={<Rutas/>}>Rutas</Route>
-          <Route path='/creditos' element={<Creditos/>}>Créditos</Route>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/rutas' element={<Rutas />}></Route>
+          <Route path='/lista-rutas' element={<ListaRutas />}></Route>
+          <Route path='/ruta/:id' element={<Ruta />}></Route>
+          
 
         </Routes>
       </main>
       <footer>
-        <p>&copy; 2025, eligresa-Alcorcón 
+        <p>&copy; 2025, eligresa-Alcorcón
           <a href="https://github.com/eligresa"><FaGithub /></a>
         </p>
       </footer>
